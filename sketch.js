@@ -83,8 +83,8 @@ var score=0;
     if(gameState===PLAY){
     console.log("PLAY")
       fill("white")
-    text("score : "+score,500,30)
-    score=score+Math.round(frameCount/300);
+    text("score : "+score,300,20)
+    score=score+Math.round(frameRate()/60);
       if (score>0 && score %200===0){
        checkPointSound.play();
         console.log("CHECKPOINT")
@@ -129,7 +129,7 @@ var score=0;
    obstacleGroup.setLifetimeEach(-1); 
     cloudGroup.setLifetimeEach(-1);   
     fill("white")
-    text("score : "+score,500,30) 
+    text("score : "+score,300,20) 
    }
    
     if(mousePressedOver(restart)) {
@@ -201,4 +201,5 @@ console.log("inside the resetet button")
  restart.visible=false
 gameOver.visible=false
   trex.changeAnimation("running",trex_running);
+  score=0;
 }
